@@ -1,0 +1,551 @@
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+.app-container {
+  background-color: #F0EDE9; /* Substitua pela cor desejada */
+  margin: 0; /* Remover margens padrão do body */
+  min-height: 100vh;
+}
+.app-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Opcional: Centralizar conteúdo horizontalmente */
+  width: 100%;
+}
+
+.navigation-buttons {
+  display: flex;
+  justify-content: space-between; /* Espaça os botões nas extremidades */
+  position: absolute;
+  top: 50%; /* Centraliza verticalmente */
+  left: 0;
+  right: 0;
+  padding: 0 20px; /* Espaçamento nas laterais */
+  transform: translateY(-50%); /* Ajuste fino do alinhamento vertical */
+  z-index: 20; /* Garante que as setas estejam acima do conteúdo */
+  pointer-events: none; /* Inicialmente desativa os eventos de ponteiro */
+}
+
+.navigation-buttons button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: none;
+  border: none;
+  font-size: 0.8rem; /* Tamanho das setas */
+  cursor: pointer;
+  padding: 10px;
+  opacity: 0.7;
+  transition: opacity 0.3s ease, color 0.3s ease;
+  pointer-events: auto; /* Reativa os eventos de ponteiro para os botões */
+}
+
+.navigation-buttons button:disabled {
+  opacity: 0.3;
+  cursor: not-allowed;
+}
+
+.navigation-buttons button:hover {
+  opacity: 1;
+  color: #666;
+}
+
+.main-content-slider {
+  width: 100%;
+  position: relative; /* Para posicionamento absoluto das seções */
+}
+
+.section-slide {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  /* Oculta todas as seções por padrão */
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.5s ease-in-out, visibility 0.5s ease-in-out;
+}
+
+.section-slide.active {
+  /* Exibe a seção ativa */
+  opacity: 1;
+  visibility: visible;
+}
+
+/* Estilos para o conteúdo dentro de cada slide*/
+.section-slide > div {
+  padding: 20px; 
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+.pagina {
+  background-color: #F0EDE9;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: rgb(0, 0, 0);
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* experiencia*/
+
+.experience {
+  padding: 40px;
+  background-color: #F0EDE9; /* Um fundo suave para a seção */
+}
+
+.experience h2 {
+  font-size: 2.5rem;
+  color: #333;
+  margin-bottom: 30px;
+  text-align: center; /* Centralizar o título da seção */
+}
+
+.experience-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); /* Layout responsivo em colunas */
+  gap: 30px; /* Espaçamento entre os blocos de experiência */
+}
+
+.experience-item {
+  background-color: #cfcfcf; /* Fundo branco para cada bloco */
+  border: 1px solid #ddd; /* Borda sutil e elegante */
+  border-radius: 8px; /* Cantos arredondados para um visual mais suave */
+  padding: 25px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Sombra suave para dar profundidade */
+}
+
+.experience-item h3 {
+  font-size: 1.5rem;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+.experience-item .company {
+  font-style: italic;
+  color: #353535;
+  margin-bottom: 8px;
+}
+
+.experience-item .description {
+  color: #000000;
+  line-height: 1.6; /* Melhora a legibilidade */
+  margin-bottom: 15px;
+}
+
+/* Estilos para destacar o tempo de experiência */
+.experience-item .period {
+  font-weight: bold;
+  color: #007bff; /* Uma cor de destaque */
+  margin-bottom: 10px;
+}
+
+/* uma borda mais elegante */
+.experience-item {
+  border-left: 5px solid #daa520; /* Borda vertical colorida na esquerda */
+  padding-left: 20px; /* Compensar o espaço da borda */
+}
+
+/* Estilos responsivos */
+@media (max-width: 768px) {
+  .experience {
+    padding: 20px;
+  }
+
+  .experience-list {
+    grid-template-columns: 1fr; /* Uma coluna em telas menores */
+  }
+
+  .experience-item {
+    padding: 15px;
+  }
+
+  .experience h2 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+  }
+}
+
+/*educação*/
+
+.education {
+  padding: 40px;
+  background-color: #F0EDE9; /* Um fundo branco ou quase branco para a seção */
+}
+
+.education h2 {
+  font-size: 2.5rem;
+  color: #333;
+  margin-bottom: 30px;
+  text-align: center; /* Centralizar o título */
+}
+
+.education-list {
+  display: flex;
+  flex-direction: column; /* Organizar os itens de educação verticalmente */
+  gap: 20px; /* Espaçamento entre os itens de educação */
+}
+
+.education-item {
+  background-color: #cfcfcf; /* Um fundo suave para cada item */
+  border-radius: 8px;
+  padding: 20px;
+  border-left: 5px solid #daa520; /* Uma borda lateral sutil e elegante */
+  margin-bottom: 15px; /* Espaçamento entre os itens */
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05); /* Sombra muito suave */
+}
+
+.education-item h3 {
+  font-size: 1.5rem;
+  color: #333;
+  margin-bottom: 5px;
+}
+
+.education-item .degree {
+  font-style: italic;
+  color: #555;
+  margin-bottom: 8px;
+}
+
+.education-item .description {
+  color: #000000;
+  line-height: 1.6;
+}
+
+.education-item .period {
+  font-weight: bold;
+  color: #6c757d; /* Uma cor secundária suave */
+  margin-top: 10px;
+  font-size: 0.9rem;
+}
+
+/* Estilos responsivos*/
+@media (max-width: 768px) {
+  .education {
+    padding: 20px;
+  }
+
+  .education h2 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+  }
+
+  .education-item {
+    padding: 15px;
+  }
+}
+
+/*Foto de perfil e cabeçalho*/
+
+.FT {
+  img {
+    width: 150px; 
+    height: auto; /* Mantém a proporção da imagem */
+    border-radius: 50%; /* Para torná-la circular*/
+    object-fit: cover; /* Garante que a imagem cubra a área sem distorcer muito */
+    margin-top: 40px;
+  }
+  }
+
+
+
+.header {
+  display: flex;
+  flex-direction: column; /* Alinhar verticalmente em telas menores */
+  align-items: center;
+  padding: 40px;
+  background-color: #F0EDE9; /* Cor de fundo suave */
+  border-bottom: 1px solid #eee;
+}
+
+/*apresentação*/
+
+
+.profile-info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center; /* Centralizar texto em telas menores */
+  background-color: #F0EDE9;
+}
+
+
+.Nome {
+  font-size: 1.4rem;
+  color: #000000;
+  margin-bottom: 5px;
+}
+
+.presentation {
+  padding: 40px;
+  background-color: #F0EDE9; /* Cor de fundo da seção */
+  display: flex; /* Ativa o Flexbox */
+  flex-direction: column; /* Organiza os itens internos verticalmente */
+  align-items: center; /* Centraliza os itens horizontalmente */
+  text-align: center; /* Centraliza o texto dentro dos itens */
+  min-height: 100vh; /* para ocupar a altura total da tela */
+}
+
+.Titulo {
+  /* Estilos para a foto de perfil (tamanho, borda, etc.) */
+  margin-bottom: 20px; /* Espaçamento abaixo da foto */
+}
+
+.Titulo img {
+  align-items: flex-start;
+  text-align: left;
+  margin-bottom: 0;
+  
+}
+
+.intro {
+
+  max-width: 600px; /* Largura máxima para o texto não ficar muito extenso */
+  
+}
+
+.intro h1 {
+  font-size: 2.5rem;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+.intro .Titulo {
+  font-size: 1.2rem;
+  color: #000000;
+  margin-bottom: 15px;
+}
+
+.intro .Descrição {
+  font-size: 1rem;
+  color: #555;
+  line-height: 1.6;
+  margin-bottom: 20px;
+}
+
+.social-links {
+  display: flex;
+  gap: 15px;
+  margin-bottom: 15px;
+}
+
+.social-link-1{
+  color: #0c71a9;
+  font-size: 1.8rem; /* Tamanho */
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.social-link-2{
+  color: #2e0707;
+  font-size: 1.8rem; /* Tamanho */
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.social-link-1:hover {
+  color: #007bff; /* Cor ao passar o mouse */
+}
+.social-link-2:hover {
+  color: #707070; /* Cor ao passar o mouse */
+}
+
+.main-nav ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  gap: 20px;
+}
+
+.main-nav li a {
+  text-decoration: none;
+  color: #333;
+  font-size: 1rem;
+  padding: 8px 12px;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+}
+
+.main-nav li a:hover {
+  background-color: #eee;
+}
+
+/* Media query para telas maiores (alinhar lado a lado) */
+@media (min-width: 768px) {
+  .header {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 50px;
+  }
+
+  .FT {
+    align-items: flex-start;
+    text-align: left;
+    margin-bottom: 0;
+  }
+
+  .main-nav ul {
+    
+  }
+}
+
+/*Habilidades*/
+
+.skills {
+  padding: 40px;
+  background-color: #F0EDE9; /* Fundo suave */
+}
+
+.indice{
+  font-size: 1rem;
+  text-align: center;
+  
+}
+
+.skills h2 {
+  font-size: 2.5rem;
+  color: #333;
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+.skills-list {
+  display: flex;
+  flex-wrap: wrap; /* Permite que as habilidades quebrem para a próxima linha */
+  gap: 15px; /* Espaçamento entre as habilidades */
+  justify-content: center; /* Centralizar as habilidades */
+}
+
+.skill-badge {
+  background-color: #e0f7fa; /* Cor de fundo clara da badge */
+  color: #00acc1; /* Cor do texto da badge (tom de azul) */
+  font-size: 1rem;
+  padding: 8px 15px;
+  border-radius: 20px; /* Formato de pílula */
+  border: 1px solid #b2ebf2; /* Borda suave */
+  margin-bottom: 10px; /* Espaçamento vertical entre as linhas */
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08); /* Sombra suave */
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.skill-badge.tecnicas:hover {
+  background-color: #ff9100; /* Inverter cores no hover para destaque */
+  color: #fff;
+}
+
+/* Cores de destaque alternativas*/
+.skill-badge.tecnicas {
+  background-color: #fff3e0;
+  color: #ff9800;
+  border-color: #ffe0b2;
+}
+
+.skill-badge.Soft:hover {
+  background-color: #35bd00; /* Inverter cores no hover para destaque */
+  color: #fff;
+}
+.skill-badge.Soft {
+  background-color: #e8f5e9;
+  color: #4caf50;
+  border-color: #c8e6c9;
+}
+
+.skill-badge.Fala:hover {
+  background-color: #2e00fd; /* Inverter cores no hover para destaque */
+  color: #fff;
+}
+
+.skill-badge.Fala {
+  background-color: #c5c4ff;
+  color: #375bfd;
+  border-color: #bec1e7;
+}
+
+/* Media queries para responsividade */
+@media (max-width: 768px) {
+  .skills {
+    padding: 20px;
+  }
+
+  .skills h2 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+  }
+
+  .skill-badge {
+    font-size: 0.9rem;
+    padding: 6px 12px;
+  }
+}
+
+/*Contato*/
+
+.contact {
+  padding: 40px;
+  background-color: #F0EDE9; 
+  text-align: center; /* Centralizar o conteúdo da seção */
+}
+
+.contact h2 {
+  font-size: 2.5rem;
+  color: #333;
+  margin-bottom: 30px;
+}
+
+.contact p {
+  color: #000000;
+  line-height: 1.6;
+  margin-bottom: 20px;
+}
+
+.contact-details {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 30px;
+}
+
+.contact-details p {
+  margin-bottom: 10px;
+  font-size: 1.3rem;
+}
+
+.contact-details {
+  margin-bottom: 10px; /* Espaçamento abaixo do bloco de detalhes */
+  padding: 10px; /* Espaçamento interno do bloco */
+  border: 1px solid #ddd; /* Borda suave opcional */
+  border-radius: 8px; /* Cantos arredondados opcionais */
+  background-color: #f8f8f8; /* Cor de fundo suave opcional para o bloco */
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05); /* Sombra suave opcional */
+  display: flex; /* Para controlar o layout dos itens dentro */
+  flex-direction: column; /* Organizar os itens verticalmente por padrão */
+  align-items: center; /* Centralizar os itens horizontalmente dentro do bloco */
+}
